@@ -291,7 +291,7 @@ main .pillars .cards .card::before{
 }
 main .pillars .cards .card:hover{box-shadow: 0px 5px 5px 3px rgba(0, 0, 0, 0.6);}
 main .pillars .cards .card:hover::before{width: 30%;}
-main .pillars .cards .card h4{margin-top: 30px; font-weight: lighter;}
+main .pillars .cards .card h4{margin: 20px 0; font-weight: lighter;}
 main .pillars .cards .card p{opacity: 0.7;}
 main .pillars .cards .card a{
     display: block;
@@ -304,9 +304,67 @@ main .pillars .cards .card a{
 /* GLANCE */
 main .glance{
     padding: 50px 20px;
-    max-width: 90%;
-    margin: auto;
+    background: var(--deep-navy-blue);
 }
+main .glance .cont{
+    max-width: 90%;
+    color: white;
+    margin: auto;
+    background: linear-gradient(to right, rgba(0,0,0,0.5)), url(./images/medal_award.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-backdrop-filter: grayscale(50%);
+    backdrop-filter: grayscale(50%);
+    /* filter: grayscale(90%); */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 10px;
+    position: relative;
+    padding: 30px 20px;
+    overflow: hidden;
+}
+main .glance .cont .stats{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-top: 50px;
+    position: relative;
+}
+main .glance .cont h3{position: relative;}
+main .glance .cont h3::before{
+    content: "";
+    height: 3px;
+    width: 25%;
+    background: lightskyblue;
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+main .glance .cont .stats .stat{
+    position: relative;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+}
+main .glance .cont .stats .stat::after{
+    width: 80%;
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 4px;
+    background: lightskyblue;
+    border-radius: 20px;
+    transition: width 0.5s ease;
+}
+main .glance .cont .stats .stat:hover::after{width: 100%;}
+main .glance .cont span.desc{font-weight: bolder; opacity: 0.7;}
+main .glance .cont .stats .stat span{opacity: 0.9; font-style: italic;}
 
 /* PHONES */
 @media screen and (max-width: 678px) {
@@ -329,6 +387,8 @@ main .glance{
 
     main .pillars{padding: 50px 0px;}
     main .pillars .cards{grid-template-columns: repeat(1, 1fr);}
+
+    main .glance .cont .stats{grid-template-columns: repeat(1, 1fr);}
 }
 
 /* TABLETS */
