@@ -9,3 +9,7 @@ window.addEventListener('click', (e) => {
         menu.classList.remove('open');
     }
 })
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 20){header.classList.add('scroll')}
+    else{header.classList.remove('scroll')};
+})

@@ -48,6 +48,12 @@ label {font-size: clamp(0.9rem, 1vw, 1rem);}
 
 
 /* HEADER */
+header.scroll{
+    top: 0;
+    width: 100%;
+    border-radius: 0px;
+    background: var(--deep-navy-blue);
+}
 header{
     display: flex;
     align-items: center;
@@ -61,8 +67,9 @@ header{
     transform: translateX(-50%);
     border-radius: 50px;
     width: 90%;
+    z-index: 2;
 }
-header img{max-width: 70px;}
+header img{max-width: 60px;}
 header nav{
     display: flex;
     align-items: center;
@@ -175,27 +182,167 @@ main .hero .cta a:last-child, main .hero .cta a:first-child:hover{
     background: transparent;
 }
 
+/* WELCOME */
+
+/* main .welcome{
+    padding: 30px 20px; 
+}
+main .welcome h3{
+    text-align: center;
+}
+main .welcome .cont{
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    gap: 20px;
+    background: rgba(0, 0, 0, 0.6);
+    max-width: 90%;
+    margin: 30px auto;
+    padding: 20px;
+    border-radius: 10px;
+}
+main .welcome .cont h4{margin: 20px auto;}
+main .welcome .cont p{opacity: 0.7;}
+main .welcome .cont .txt{
+    color: white;
+}
+main .welcome .cont .txt a{
+    display: block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: 2px solid var(--bright-red);
+    color: white;
+    font-weight: bold;
+    width: fit-content;
+    border-radius: 5px;
+}
+main .welcome .cont .txt a:hover{
+    background: rgba(0, 0, 0, 0.6);
+}
+main .welcome .carousel{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+main .welcome .carousel img:hover{
+    scale: 1.1;
+}
+main .welcome .carousel img:first-child{
+    object-fit: cover;
+    max-width: 200px;
+    max-height: 200px;
+    align-self: flex-end;
+    justify-self: flex-end;
+    border-radius: 8px;
+}
+main .welcome .carousel img:nth-child(2){
+    object-fit: cover;
+    max-width: 250px;
+    max-height: 250px;
+    border-radius: 10px;
+}
+main .welcome .carousel img:nth-child(3){
+    object-fit: cover;
+    max-width: 250px;
+    max-height: 250px;
+    border-radius: 10px;
+    align-items: flex-start;
+    justify-self: flex-end;
+}
+main .welcome .carousel img:last-child{
+    object-fit: cover;
+    max-width: 200px;
+    max-height: 200px;
+    border-radius: 8px;
+} */
+
+/* PILLARS */
+main .pillars{
+    padding: 50px 20px;
+    max-width: 90%;
+    margin: auto;
+}
+main .pillars .cards{
+    margin-top: 80px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+main .pillars .cards .card{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0px 5px 3px rgba(0, 0, 0, 0.6);
+    cursor: pointer;
+}
+main .pillars .cards .card::before{
+    position: absolute;
+    content: "";
+    top: 5%;
+    left: 5%;
+    border-radius: 10px;
+    width: 20%;
+    height: 3px;
+    transition: width 0.5s ease;
+    background: var(--deep-navy-blue);
+}
+main .pillars .cards .card:hover{box-shadow: 0px 5px 5px 3px rgba(0, 0, 0, 0.6);}
+main .pillars .cards .card:hover::before{width: 30%;}
+main .pillars .cards .card h4{margin-top: 30px; font-weight: lighter;}
+main .pillars .cards .card p{opacity: 0.7;}
+main .pillars .cards .card a{
+    display: block;
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+/* GLANCE */
+main .glance{
+    padding: 50px 20px;
+    max-width: 90%;
+    margin: auto;
+}
+
 /* PHONES */
 @media screen and (max-width: 678px) {
+    header img{max-width: 50px;}
     header nav, header .cta{display: none;}
     header .menu{margin-right: 10px;}
+
     main section{padding: 0 20px;}
+
+
     main .hero .txt h1{line-height: 1.5;}
     main .hero .txt p{width: 100%;}
     main .hero .cta a{padding: 10px 15px;}
-}
 
-/* NA WAH */
+    main .welcome .cont{display: block;}
+    main .welcome .cont .txt{text-align: center;}
+    main .welcome .cont .txt a{margin: 20px auto;}
+    main .welcome .carousel img:nth-child(3), main .welcome .carousel img:nth-child(2){max-width: 70%;}
+    main .welcome .carousel img:first-child, main .welcome .carousel img:last-child{max-width: 50%;}
+
+    main .pillars{padding: 50px 0px;}
+    main .pillars .cards{grid-template-columns: repeat(1, 1fr);}
+}
 
 /* TABLETS */
 @media screen and (min-width: 678px) {
     header nav, header .cta{display: none;}
     header .menu{margin-right: 10px;}
+
+    main .pillars .cards{grid-template-columns: repeat(2, 1fr);}
 }
 
 /* LAPTOPS */
 @media screen and (min-width: 1024px) {
     header .menu{display: none;}
     header nav, header .cta{display: flex;}
-    
+ 
+    main .pillars .cards{grid-template-columns: repeat(4, 1fr);}
 }
